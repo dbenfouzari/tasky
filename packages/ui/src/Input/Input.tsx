@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FormEvent } from 'react';
 import styled from 'styled-components';
 
-interface ParentProps {
+export interface ParentProps {
     /**
      * Input value that may be string or number
      * @since 0.0.0
@@ -12,7 +12,7 @@ interface ParentProps {
      * Handler that will be called when input is updated
      * @since 0.0.0
      */
-    onChange: (event: FormEvent<HTMLInputElement>) => void;
+    onChange: (value: string) => void;
     /**
      * Input styles will be extended with this className
      * @since 0.0.0
@@ -20,16 +20,16 @@ interface ParentProps {
     className?: string;
 }
 
-interface InnerProps {
+export interface InnerProps {
     value: string | number;
-    onChange: (event: FormEvent<HTMLInputElement>) => void;
+    onChange: (event: string) => void;
     parentClassName?: string;
 }
 
 const Input = ({ value, onChange, parentClassName, className }: ParentProps & InnerProps) => (
     <input
         value={value}
-        onChange={onChange}
+        onChange={(event: FormEvent<HTMLInputElement>) => onChange(event.currentTarget.value)}
         className={[parentClassName, className].join(' ')}
     />
 );
