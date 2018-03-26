@@ -20,6 +20,7 @@ class App extends React.Component {
                     <Input value="123" onChange={handleChange} />
                     <Button onClick={() => null}>Click me</Button>
                 </header>
+
                 <p className="App-intro">
                     To get started, edit <code>src/App.tsx</code> and save to reload.
                 </p>
