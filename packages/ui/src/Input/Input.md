@@ -1,5 +1,8 @@
 Coucou
 
 ```js
-<Input value={'Test'} onChange={e => { console.log(e.target.value) }} />
+<Input
+    value='My incredible input'
+    onChange={nextVal => { console.log(nextVal) }}
+/>
 ```

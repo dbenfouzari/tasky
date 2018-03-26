@@ -1,7 +1,16 @@
-/// <reference path="../react/react.d.ts"/>
+declare module '@tasky/ui' {
+    export interface InputProps {
+        value: string | number;
+        onChange: (value: string) => void;
+        className?: string;
+    }
 
-declare module 'tasky-ui' {
-    import React = __React;
+    export interface ButtonProps {
+        onClick: (event: HTMLButtonElement) => void;
+        children: JSX.Element | JSX.Element[] | string;
+        className?: string;
+    }
 
-    export function Input(props: InputProps): React.Component<any, any>;
+    export function Input(props: InputProps): JSX.Element;
+    export function Button(props: ButtonProps): JSX.Element;
 }
