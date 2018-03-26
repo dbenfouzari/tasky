@@ -1,8 +1,15 @@
 import * as React from 'react';
 import { ThemeProvider as ExternalThemeProvider } from 'styled-components';
+import { COLORS } from './constants';
+
+interface Color {
+    light:  string;
+    medium: string;
+    strong: string;
+}
 
 interface Theme {
-    primary: string;
+    primary: Color;
 }
 
 interface ThemeProviderProps {
@@ -11,10 +18,10 @@ interface ThemeProviderProps {
 }
 
 const defaultTheme: Theme = {
-    primary: '#f00'
+    primary: COLORS.AQUA
 };
 
-const mergedThemes = (customTheme: Theme) => Object.assign({}, defaultTheme, customTheme);
+const mergedThemes = (customTheme: Theme): Theme => Object.assign({}, defaultTheme, customTheme);
 
 const ThemeProvider = ({ theme, children }: ThemeProviderProps) => (
     <ExternalThemeProvider theme={mergedThemes(theme)}>{children}</ExternalThemeProvider>
