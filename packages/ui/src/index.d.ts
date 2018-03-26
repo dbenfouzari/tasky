@@ -11,6 +11,12 @@ declare module '@tasky/ui' {
         className?: string;
     }
 
+    export interface ThemeProviderProps {
+        theme: Object;
+        children: JSX.Element;
+    }
+
     export function Input(props: InputProps): JSX.Element;
     export function Button(props: ButtonProps): JSX.Element;
+    export function ThemeProvider(props: ThemeProviderProps): JSX.Element;
 }

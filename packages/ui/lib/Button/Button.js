@@ -9,7 +9,7 @@ var React = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n    padding: 5px 10px;\n    font-size: 1em;\n    border: 1px solid rgba(0, 0, 0, .1);\n    \n    &:focus {\n        outline: 0;\n    }\n"]);
+var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\n    padding: 5px 10px;\n    font-size: 1em;\n    border: 1px solid rgba(0, 0, 0, .1);\n    background-color: ", ";\n    \n    &:focus {\n        outline: 0;\n    }\n"]);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28,7 +28,9 @@ var Button = function Button(_ref) {
   }, children);
 };
 
-var StyledButton = (0, _styledComponents.default)(Button)(_templateObject);
+var StyledButton = (0, _styledComponents.default)(Button)(_templateObject, function (props) {
+  return props.theme.primary;
+});
 
 var FullButton = function FullButton(_ref2) {
   var onClick = _ref2.onClick,

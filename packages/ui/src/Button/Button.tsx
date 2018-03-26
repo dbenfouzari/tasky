@@ -34,6 +34,7 @@ const StyledButton = styled<InnerProps>(Button)`
     padding: 5px 10px;
     font-size: 1em;
     border: 1px solid rgba(0, 0, 0, .1);
+    background-color: ${props => props.theme.primary};
     
     &:focus {
         outline: 0;
