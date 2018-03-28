@@ -7,7 +7,7 @@ interface WrapperProps {
 }
 
 const Wrapper = ({ children }: WrapperProps) => (
-    <ThemeProvider theme={{ primary: COLORS.MINT }}>{children}</ThemeProvider>
+    <ThemeProvider theme={{ primary: COLORS.MATERIAL.WET_ASPHALT }}>{children}</ThemeProvider>
 );
 
 export default Wrapper;

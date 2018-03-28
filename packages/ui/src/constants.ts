@@ -1,70 +1,50 @@
-interface Color {
-    light:  string;
-    medium: string;
-    strong: string;
-}
-
 interface Colors {
-    GRAPE_FRUIT: Color;
-    BITTER_SWEET: Color;
-    SUNFLOWER: Color;
-    GRASS: Color;
-    MINT: Color;
-    AQUA: Color;
-    LIGHT_GREY: Color;
-    DARK_GREY: Color;
+    MATERIAL: {
+        TURQUOISE: '#1abc9c';
+        GREENSEA: '#16a085';
+        SUNFLOWER: '#f1c40f';
+        ORANGE: '#f39c12';
+        EMERLAND: '#2ecc71';
+        NEPHRITIS: '#27ae60';
+        CARROT: '#e67e22';
+        PUMPKIN: '#d35400';
+        PETER_RIVER: '#3498db';
+        BELIZE_HOLE: '#2980b9';
+        ALIZARIN: '#e74c3c';
+        POME_GRANATE: '#c0392b';
+        AMETHYST: '#9b59b6';
+        WYSTHERIA: '#8e44ad';
+        CLOUDS: '#ecf0f1';
+        SILVER: '#bdc3c7';
+        WET_ASPHALT: '#34495e';
+        MIDNIGHT_BLUE: '#2c3e50';
+        CONCRETE: '#95a5a6';
+        ASBESTOS: '#7f8c8d';
+    };
 }
 
-/**
- * @link https://d13yacurqjgara.cloudfront.net/users/482626/screenshots/2623951/flat-colors.png
- * TODO : Add `BLUE_JEANS`, `LAVENDER`, `LAVENDER`, `SKIN_TONE`
- */
 export const COLORS: Colors = {
-    GRAPE_FRUIT: {
-        light:  '#f76d82',
-        medium: '#ec5564',
-        strong: '#d95552'
-    },
-
-    BITTER_SWEET: {
-        light:  '#fc8370',
-        medium: '#fb6d51',
-        strong: '#e8563f'
-    },
-
-    SUNFLOWER: {
-        light:  '#fcd277',
-        medium: '#fecd57',
-        strong: '#f5ba45'
-    },
-
-    GRASS: {
-        light:  '#fcd277',
-        medium: '#fecd57',
-        strong: '#f5ba45'
-    },
-
-    MINT: {
-        light: '#62ddbd',
-        medium: '#46cead',
-        strong: '#35bb9b'
-    },
-
-    AQUA: {
-        light: '#6BD4EF',
-        medium: '#55C0E6',
-        strong: '#41AED7'
-    },
-
-    LIGHT_GREY: {
-        light: '#f4f6f9',
-        medium: '#e5e8ec',
-        strong: '#cbd0d8'
-    },
-
-    DARK_GREY: {
-        light: '#a9b1bc',
-        medium: '#646c77',
-        strong: '#424953'
+    // https://www.materialui.co/flatuicolors
+    MATERIAL: {
+        TURQUOISE: '#1abc9c',
+        GREENSEA: '#16a085',
+        SUNFLOWER: '#f1c40f',
+        ORANGE: '#f39c12',
+        EMERLAND: '#2ecc71',
+        NEPHRITIS: '#27ae60',
+        CARROT: '#e67e22',
+        PUMPKIN: '#d35400',
+        PETER_RIVER: '#3498db',
+        BELIZE_HOLE: '#2980b9',
+        ALIZARIN: '#e74c3c',
+        POME_GRANATE: '#c0392b',
+        AMETHYST: '#9b59b6',
+        WYSTHERIA: '#8e44ad',
+        CLOUDS: '#ecf0f1',
+        SILVER: '#bdc3c7',
+        WET_ASPHALT: '#34495e',
+        MIDNIGHT_BLUE: '#2c3e50',
+        CONCRETE: '#95a5a6',
+        ASBESTOS: '#7f8c8d',
     }
 };

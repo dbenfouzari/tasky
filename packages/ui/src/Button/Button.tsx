@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { FormEvent } from 'react';
 import styled from 'styled-components';
+import { InternalTheme } from '@tasky/ui';
 
 export interface ParentProps {
     /**
@@ -23,6 +24,7 @@ export interface ParentProps {
 }
 
 export interface InnerProps {
+    theme: InternalTheme;
     onClick: (event: FormEvent<HTMLButtonElement>) => void;
     parentClassName?: string;
 }

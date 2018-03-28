@@ -1,30 +1,31 @@
 import * as React from 'react';
 import { ThemeProvider as ExternalThemeProvider } from 'styled-components';
+import { Color, ColorPalette, Theme, ThemeProviderProps, InternalTheme } from '@tasky/ui';
 import { COLORS } from './constants';
+import { getTones } from './utils';
 
-interface Color {
-    light:  string;
-    medium: string;
-    strong: string;
-}
-
-interface Theme {
-    primary: Color;
-}
-
-interface ThemeProviderProps {
-    theme: Theme;
-    children: JSX.Element;
-}
-
-const defaultTheme: Theme = {
-    primary: COLORS.AQUA
+const defaultTheme: InternalTheme = {
+    primary: getTones(COLORS.MATERIAL.ALIZARIN)
 };
 
-const mergedThemes = (customTheme: Theme): Theme => Object.assign({}, defaultTheme, customTheme);
+const convertColorToPalette = (color: Color): ColorPalette => getTones(color);
+const convertThemeToInternalTheme = (theme: Theme): InternalTheme => {
+    let nextTheme: InternalTheme = {};
+
+    Object.keys(theme).forEach(colorType => {
+        nextTheme[colorType] = convertColorToPalette(theme[colorType]);
+    });
+
+    return nextTheme;
+};
+
+const mergeThemes = (customTheme: Theme): InternalTheme => ({
+    ...defaultTheme,
+    ...convertThemeToInternalTheme(customTheme)
+});
 
 const ThemeProvider = ({ theme, children }: ThemeProviderProps) => (
-    <ExternalThemeProvider theme={mergedThemes(theme)}>{children}</ExternalThemeProvider>
+    <ExternalThemeProvider theme={mergeThemes(theme)}>{children}</ExternalThemeProvider>
 );
 
 export default ThemeProvider;
