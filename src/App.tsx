@@ -1,8 +1,5 @@
 import * as React from 'react';
-import { ThemeProvider, Input, Button } from '@tasky/ui';
-import './App.css';
-
-const logo = require('./logo.svg');
+import { ThemeProvider, Input, Button, COLORS, Navbar, DefaultLayout } from '@tasky/ui';
 
 const handleChange = nextVal => {
     // tslint:disable-next-line:no-console
@@ -12,18 +9,13 @@ const handleChange = nextVal => {
 class App extends React.Component {
   render() {
     return (
-        <ThemeProvider theme={{primary: '#ff0'}}>
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Welcome to React</h1>
-                    <Input value="123" onChange={handleChange} />
-                    <Button onClick={() => null}>Coucou</Button>
-                </header>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.tsx</code> and save to reload.
-                </p>
-            </div>
+        <ThemeProvider theme={{ primary: COLORS.MATERIAL.GREENSEA }}>
+            <DefaultLayout>
+                <Navbar title="Tasky" fixed={true} />
+
+                <Input value="123" onChange={handleChange} />
+                <Button onClick={() => null}>Click me</Button>
+            </DefaultLayout>
         </ThemeProvider>
     );
   }
